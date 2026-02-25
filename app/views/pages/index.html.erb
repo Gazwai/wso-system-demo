@@ -1,0 +1,65 @@
+<div class="relative flex">
+  <div class="drawer lg:drawer-open">
+    <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+
+    <div class="flex flex-col items-center gap-8 mb-8 drawer-content">
+      <!-- Page content here -->
+      <label for="my-drawer-3" class="absolute z-10 hover:cursor-pointer lg:hidden left-2 top-5">
+        <i class="fa-solid fa-bars fa-2xl" style="color: #09193d;"></i>
+      </label>
+
+      <%= render 'shared/navbar' %>
+      <%= render 'messages' %>
+      <%= render 'appointments' %>
+      <%= render 'analytics' %>
+    </div>
+
+    <div class="drawer-side">
+      <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+
+      <ul class="sticky text-white menu bg-wso-navy h-dvh w-80">
+        <!-- Sidebar content here -->
+        <li class="mb-8">
+          <p class="text-xl font-bold">WSO</p>
+
+          <p class="pt-0 text-sm text-gray-400">World Squash Officiating</p>
+        </li>
+
+        <% menu_items.each do |item| %>
+          <li class="<%= item[:active] ? "bg-wso-blue" : "hover:bg-gray-800" %>">
+            <div class="flex flex-row gap-2">
+              <i class="<%= item[:icon] %>" style="color: #FFFFFF;"></i>
+
+              <%= link_to item[:text], "#", class: "uppercase font-medium" %>
+            </div>
+          </li>
+        <% end %>
+
+        <%= link_to '#', class: "flex items-center gap-4 mt-auto mb-4 ml-4" do %>
+          <i class="fa-regular fa-circle-user fa-2xl" style="color: #FFFFFF;"></i>
+
+          <div>
+            <p>John Smith</p>
+
+            <p class="text-gray-400">Referee</p>
+          </div>
+        <% end %>
+
+
+        <% if false %>
+          <%# logout button for dev mode  %>
+          <li>
+            <%= link_to destroy_user_session_path,
+                        data: { turbo_method: :delete },
+                        class: "flex items-center gap-4 py-4 hover:bg-red-900/20 text-red-400 transition-colors" do
+            %>
+              <i class="w-6 text-center fa-solid fa-arrow-right-from-bracket"></i>
+
+              <span class="font-medium uppercase">Logout</span>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
