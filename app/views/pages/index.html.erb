@@ -1,35 +1,50 @@
 <div class="relative flex">
   <div class="drawer lg:drawer-open">
     <input id="my-drawer-3" type="checkbox" class="drawer-toggle" />
+
     <div class="flex flex-col items-center gap-8 mb-8 drawer-content">
       <!-- Page content here -->
       <label for="my-drawer-3" class="absolute z-10 hover:cursor-pointer lg:hidden left-2 top-5">
         <i class="fa-solid fa-bars fa-2xl" style="color: #09193d;"></i>
       </label>
+
       <%= render 'shared/navbar' %>
       <%= render 'messages' %>
       <%= render 'appointments' %>
       <%= render 'analytics' %>
     </div>
+
     <div class="drawer-side">
       <label for="my-drawer-3" aria-label="close sidebar" class="drawer-overlay"></label>
+
       <ul class="sticky text-white menu bg-wso-navy h-dvh w-80">
         <!-- Sidebar content here -->
         <li class="mb-8">
           <p class="text-xl font-bold">WSO</p>
+
           <p class="pt-0 text-sm text-gray-400">World Squash Officiating</p>
         </li>
-        <% get_menu_items.each do |item| %>
-          <li class="<%= item[:active] ? "bg-wso-blue" : "hover:bg-gray-800" %>"><%= link_to item[:text].upcase, "#" %></li>
+
+        <% menu_items.each do |item| %>
+          <li class="<%= item[:active] ? "bg-wso-blue" : "hover:bg-gray-800" %>">
+            <div class="flex flex-row gap-2">
+              <i class="<%= item[:icon] %>" style="color: #FFFFFF;"></i>
+
+              <%= link_to item[:text].upcase, "#" %>
+            </div>
+          </li>
         <% end %>
+
         <div class="flex items-center gap-4 mt-auto mb-4 ml-4">
           <i class="fa-regular fa-circle-user fa-2xl" style="color: rgb(255, 255, 255);"></i>
+
           <div>
             <p>John Smith</p>
+
             <p class="text-gray-400">Referee</p>
           </div>
         </div>
       </ul>
     </div>
-    <div>
-    </div>
+  </div>
+</div>
