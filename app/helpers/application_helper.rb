@@ -6,7 +6,7 @@ module ApplicationHelper
       { icon: "fa-solid fa-trophy", text: "Tournaments", active: false },
       { icon: "fa-regular fa-message", text: "Messages", active: false },
       { icon: "fa-regular fa-folder", text: "Resources", active: false },
-      { icon: "fa-regular fa-circle-question", text: "Help", active: false },
+      { icon: "fa-regular fa-circle-question", text: "Help", active: false }
     ]
   end
 end
