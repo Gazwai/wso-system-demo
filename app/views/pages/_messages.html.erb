@@ -1,9 +1,43 @@
-<div class="w-11/12 border shadow-sm card bg-base-100 border-neutral-content">
+<% messages = [{
+  title: "Tournament Director",
+  subject: "US Open Assignment Confirmation",
+  time: 2,
+  read: false
+},
+{
+  title: "WSO Admin",
+  subject: "New Rules Update Available",
+  time: 5,
+  read: false
+},
+{
+  title: "Regional Coordinator",
+  subject: "Training Session Scheduled",
+  time: 22,
+  read: true
+}] %>
+
+<div class="w-11/12 border shadow-sm card bg-base-100 border-neutral-content ">
   <div class="card-body">
-    <h2 class="card-title">Messages</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+    <div class="flex justify-between w-full">
+      <h2 class="card-title">Latest Messages</h2>
+      <span>VIEW ALL</span>
     </div>
+    <% messages.each do |message| %>
+      <div class="flex mt-4 border rounded-lg p-4 transition-colors hover:cursor-pointer <%= message[:read] ? "border-neutral-content bg-base-200 hover:bg-base-300" : "border-wso-blue bg-blue-50 hover:bg-blue-100" %>">
+        <div class="flex justify-between w-full">
+          <div class="flex flex-col w-full gap-1">
+            <h2 class="card-title"><%= message[:title] %></h2>
+            <p><%= message[:subject] %></p>
+            <p><i class="mr-1 fa-regular fa-clock"></i><%= message[:time] %> hours ago</p>
+          </div>
+          <% unless message[:read]  %>
+            <div class="indicator">
+              <span class="indicator-item status bg-wso-blue"></span>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <% end %>
   </div>
 </div>
