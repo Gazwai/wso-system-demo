@@ -1,23 +1,27 @@
-<div class="navbar bg-base-100 shadow-sm">
+<nav class="px-4 shadow-sm navbar bg-base-100 lg:px-12">
   <div class="flex-1">
-    <a class="btn btn-ghost text-xl">daisyUI</a>
+    <p class="ml-10 text-lg font-bold lg:text-xl lg:ml-0 text-wso-navy">WORLD SQUASH OFFICIATING</p>
+
+    <p class="hidden text-sm text-gray-600 lg:block">Referee Management System</p>
   </div>
 
   <div class="flex-none">
-    <ul class="menu menu-horizontal px-1">
-      <li><a>Link</a></li>
-
+    <ul class="px-1 py-1 text-white rounded-lg menu menu-horizontal bg-wso-blue">
       <li>
         <details>
-          <summary>Parent</summary>
+          <summary>
+            REFEREE VIEW
+          </summary>
 
-          <ul class="bg-base-100 rounded-t-none p-2">
-            <li><a>Link 1</a></li>
+          <ul class="z-10 w-full p-2 text-black rounded-t-none bg-base-100">
+            <li><%= link_to 'Referee View', "#" %></li>
 
-            <li><a>Link 2</a></li>
+            <li><%= link_to 'Admin View', "#" %></li>
+
+            <li><%= link_to 'Appraiser View', "#" %></li>
           </ul>
         </details>
       </li>
     </ul>
   </div>
-</div>
+</nav>
