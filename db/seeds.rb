@@ -25,7 +25,7 @@ Event.create!([
   { name: "US Open Championships", start_date: "2026-06-15", end_date: "2026-06-19", level: :international, location: "Philadelphia, USA", role: "Assistant Referee" },
   { name: "British Open", start_date: "2026-03-08", end_date: "2026-03-12", level: :international, location: "Birmingham, UK", role: "Assistant Referee" },
   { name: "Regional Championships", start_date: "2026-05-05", end_date: "2026-05-07", level: :regional, location: "Derby, UK", role: "Lead Referee" },
-  { name: "Regional Championships", start_date: "2026-07-15", end_date: "2026-07-17", level: :regional, location: "Leeds, UK", role: "Lead Referee" }
+  { name: "Summer Series", start_date: "2026-07-15", end_date: "2026-07-17", level: :national, location: "Leeds, UK", role: "Lead Referee" }
 ])
 
 puts "Events Created"
