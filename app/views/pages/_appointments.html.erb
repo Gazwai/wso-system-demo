@@ -54,7 +54,7 @@
           <% events.each do |event| %>
             <tr class="hover:bg-base-300">
               <td>
-                <p><strong><%= event[:name] %></strong></p>
+                <p class="font-bold"><%= event[:name] %></p>
 
                 <p><%= event[:date] %></p>
               </td>
@@ -75,7 +75,7 @@
                 <button class="text-white rounded-lg btn bg-wso-blue">
                   <%= event[:action] %>
 
-                  <i class="fa-solid fa-arrow-up-right-from-square" style="color: rgb(255, 255, 255);"></i>
+                  <i class="fa-solid fa-arrow-up-right-from-square" style="color: #FFFFFF;"></i>
                 </button>
               </td>
             </tr>
