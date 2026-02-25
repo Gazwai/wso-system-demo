@@ -1,9 +1,87 @@
-<div class="w-11/12 border shadow-sm card bg-base-100 border-neutral-content">
+<% events = [{
+  name: "US Open Championships",
+  date: "April 8-12, 2026",
+  level: { name: "International", color: "primary"},
+  location: "Philadelphia, USA",
+  role: "Assistant Referee",
+  action: "View",
+},
+{
+  name: "British Open",
+  date: "April 8-12, 2026",
+  level: { name: "International", color: "primary"},
+  location: "Birmingham, UK",
+  role: "Assistant Referee",
+  action: "View",
+},
+{
+  name: "Regional Championships",
+  date: "May 5-7, 2024",
+  level: { name: "Regional", color: "secondary"},
+  location: "Derby, UK",
+  role: "Lead Referee",
+  action: "View",
+},
+{
+  name: "Summer League Finals",
+  date: "June 18-19, 2024",
+  level: { name: "National", color: "accent"},
+  location: "Leeds, UK",
+  role: "Lead Referee",
+  action: "View",
+}] %>
+<div class="w-11/12 border shadow-sm card bg-base-100 border-neutral-content ">
   <div class="card-body">
-    <h2 class="card-title">Appointments</h2>
-    <p>A card component has a figure, a body part, and inside body there are title and actions parts</p>
-    <div class="card-actions justify-end">
-      <button class="btn btn-primary">Buy Now</button>
+    <div class="flex justify-between w-full">
+      <h2 class="uppercase card-title">Referee's Appointments</h2>
+
+      <%= link_to 'VIEW CALENDAR', "#", class: "text-wso-blue" %>
+    </div>
+    <div class="overflow-x-auto">
+      <table class="table">
+        <!-- head -->
+        <thead>
+          <tr>
+            <th>Event Name & Date</th>
+            <th>Level</th>
+            <th>Location</th>
+            <th>Role</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% events.each do |event| %>
+            <tr class="hover:bg-base-300">
+              <td>
+                <p><strong><%= event[:name] %></strong></p>
+
+                <p><%= event[:date] %></p>
+              </td>
+
+              <td>
+                <div class="badge badge-outline badge-<%= event[:level][:color] %>"><%= event[:level][:name] %></div>
+              </td>
+
+              <td>
+                <i class="mr-2 fa-solid fa-location-dot"></i>
+
+                <%= event[:location] %>
+              </td>
+
+              <td><%= event[:role] %></td>
+
+              <td>
+                <button class="text-white rounded-lg btn bg-wso-blue">
+                  <%= event[:action] %>
+
+                  <i class="fa-solid fa-arrow-up-right-from-square" style="color: rgb(255, 255, 255);"></i>
+                </button>
+              </td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
